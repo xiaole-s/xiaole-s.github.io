@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>筱乐前端</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="javascript, HTML5, css, web前端, UED, jQuery." />
+    <meta name="author" content="xiaole" />
+    <link href="Contents/bygone.css" rel="stylesheet" />
+    <link href="https://github.com/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body style="">
+    <header>
+        <nav>
+            <ul id="main_nav">
+                <li class="active all" data-title="all" title="一次全部浏览">All</li>
+                <li class="icon-address active" data-title="before_CUG" title="大学前我的大学梦"></li>
+                <li class="icon-graduation-cap active" data-title="education" title="校园学习经历"></li>
+                <li class="icon-briefcase active" data-title="project" title="项目经历"></li>
+                <li class="icon-user active" data-title="user" title="个人看法"></li>
+
+            </ul>
+            <ul id="nav_ctrl">
+                <li class="icon-up-open" data-title="Next"></li>
+                <li class="icon-down-open" data-title="Previous"></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="instructions_container">
+        可以使用 'J' 和 'K' 上下移动时间线.
+    </div>
+    <div id="timeline_container">
+        <header>
+            <figure>
+                <img src="/xiaole-s.github.io/images/profile-512_8.jpg" title="xiaole" alt="筱乐">
+            </figure>
+            <h1>2014回顾
+                <br>我的大学梦</h1>
+        </header>
+        <ul>
+            <li class="before_CUG_event active">
+                <div class="event_icn icon-address"></div>
+                <div class="event_content">
+                    <h2>大学前属于自己的大学梦</h2>
+                    <p>
+                        在进大学前，每个人可能都有一个属于自己的大学梦。可能受高中老师的影响，大部分同学心目中的大学是享乐的天堂。可能出于叛逆或者我独特的性格，我的想法却刻意的与众不同。在我看来，大学同样是我的一种解脱，因为我理解的大学不必去学那么多看上去没用的科目，可以专心于自己选择的专业，做自己感兴趣的事，因此我给我的同学们灌输了大学才是努力的开始的观念。小学初中接触到电脑的时候基本都在玩游戏，从纸牌、扫雷到各种飞车，直到高一时我有了属于自己的一台电脑。
+                    </p>
+                </div>
+                <div class="event_date">
+                    出生后的某一天~2007
+                </div>
+            </li>
+            <li class="before_CUG_event">
+                <div class="event_icn icon-address"></div>
+                <div class="event_content">
+                    <h2>大学前的梦想的起源</h2>
+                    <p>
+                        出于对图形图像的特殊喜爱，我的电脑里面装上超过一个小时的软件一定是我审核UI还过得去的，当时对软件性能没有多深的理解，只要有功能和UI更好的同类软件我会第一时间更新或更换。看到新应用软件、新游戏里面的绚烂的场景和友好的操作体验，我韵生了自己去创造这些自己想象的美景的念头，因此我开始学习photoshop和flash等制图动画软件，当然还有后面发现的一些诸如美图秀秀这一类功能较少，但操作简单且能满足更多普通用户需求的软件。因为当时没有意识去学As脚本，制作的画面生硬没有交互体验，这对我来说没有太多的成就感，为了满足我对软件玄幻体验的需求，我决心去自己编写更好体验的软件，以致填写志愿时五个学校只填了“软件工程”一个专业。 
+                    </p>
+                </div>
+                <div class="event_date">
+                    ~2010-08
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>大一初入软件工程</h2>
+                    <p>
+                        进入大学后，大一，除了专业课外，我继续按着我的理解和对图形图像的喜爱选择了一款3D编辑软件3dsMax开始我的网络课程学习。这一年没什么专业课，只有C/C++语言和计算机结构与组成原理。第一个学期的C/C++课程还只是win32控制台程序，但黑屏在性能保证的情况下我也要输出格式和提示语上与众不同。不满足控制台的显示效果的我，大一的第一个假期我在网上学习了孙鑫老师的C++全套视频教程(包括MFC)，以致在接下来大一下的c++课程和课程实习上表现突出。当然这学期也没有闲着，“高中不是学过一点flash吗？”，因此我便开始了flash的脚本ActionScript3.0的学习，并把在flash中编写的的绚丽的小软件（时钟，mp3播放器等）嵌入到C++编写的MFC窗口程序中去。也因此造就了大家对我都以友好的UI为名。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2010-09~2011-08
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>大二上与Web前端的初遇</h2>
+                    <p>
+                        为了弥补因课程冲突没选上还是去撑了网页设计课程。这学期的专业课相当于是对接下来软工生涯课程的一个概要的入门介绍。当然这个学期我可没闲着，网页设计课程虽然是撑课我更要发挥我自学的技能，网上视频学习是之一，但后来发现，在网页设计这种快速但知识点还不少的技能上，视频来的太慢而且国内的教程几乎都是只针对某一个作者设计好的网页来编码。这样的局限就是记住这个块，用这个块来拼接更复杂的组合网页。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2011-9~2012-01
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>我的学习思路与这个寒假</h2>
+                    <p>
+                        在我看来，没有一个点的知识面是很难理解并创造出随心所欲的程序的。有C或c++基础的才会明白常量或字符串字面值是可以随心所欲的修改的。而这些在较高层的编程语言JS中是禁止或无法办到的，因为js的内存管理机制是自动的。我惯用的学习是先大致的去了解网页设计能做什么，然后下载一系列的手册和书籍，对于自己感兴趣的每一部分然更细化的去学习。因为此时我还没有确定向web前端方向发展，我还只是作为一种增加软件表现力和增强用户体验的技术去学习。而对于我感兴趣和发展方向的知识，我会尽量去仔细学习其中的每一个点，最后再把知识点合起来，于是我开始查相关方面的资料进行学习。为了让自己写的程序更加的炫，第一个假期我学习了3dsMax的一套两百多集的视频教程。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2012-01~2012-02
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>大二下我与Web前端的不解之缘</h2>
+                    <p>
+                        个人的程序模式基本结束，每个课程开始试着让我们组队完成一个个较复杂的程序或项目。刚开学便是上学期结束的数据库课程的第一个图书管理系统，自然，分工合作，那UI部分和部分逻辑由我负责，这次除了嵌入flash程序还有新学的网页阅读页面。做完这个算是小项目的程序后，这儿有个小插曲，这是一个说走就走的求学之旅。当然之后的各种课程实习和团队项目不期而至。为了弥补第一学期没选上的网页设计课程，这学期也选上了，就在这次有了更深入的学习。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2012-02~2012-06
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>这个假期经历太多</h2>
+                    <p>
+                        因苦于3D模型在软件中增加的大量数据和在网页中传输慢的限制，历经15个小时的火车于5月1日来到了位于上海嘉定的同济大学软件学院找到了国内三维模型轻量化方面的顶级教授，并顺利得到了贾教授的接见和知识的解答，为了更进一步的学习贾老师给了我暑期到其实验室学习的机会。当然这学期一放假，我便背起书包踏上一个多月的求学之旅（同时我还跟着学习了Unity,这才有了后来程序中嵌入3D应用的基础）。这学期的实践对我来说，网页设计不仅是设计了，他已经升级成了Web前端开发了，因为它简洁而又极具表现力和适用范围广的种种优点不正是我一直要寻找的自我实现的成就感吗？同时这也让我确定了我今后的大致发展方向，再在之后的进阶学习中，伴随着Web轻客户端的思想的深入人心，我选择Web 前端的决心更加强烈。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2012-07~2012-08
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>大三满满的都是专业课与团队项目</h2>
+                    <p>
+                        但我在保证专业课质量的同时，没有放弃我的Web前端之旅。而且刻意的在项目中担任web前端开发的角色，其实也没怎么去刻意，同学们对我早以UI冠名。在大二下和整个大三里做的几个Web项目里我没有一个不是做Web前端的。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2012-08~2013-06
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>总结校园学习生活</h2>
+                    <p>
+                        我们的专业课有：计算机高级程序设计(C/C++)、计算机结构与组成、面向对象程序设计、数据结构与算法、.Net软件开发(C#)、Java语言程序设计、Java与JavaEE语言程序设计、UML、操作系统A、计算机网络、嵌入式系统、个人软件过程与小组软件过程、计算机图形学（CG）、人工智能A、软件测试、软件架构设计、软件项目管理、软件需求、实用数据库(SQLServer / Oracle)、网络编程技术、软件能力成熟度模型，及以上配套课程实习等。因此要想在大学前三年里发展一个自己偏好的方向的话出更多的时间，我保持了专业课程实践除java和第一次良好外其他普遍全优，团队合作中两次专业最优成绩，但我免不了没时间去对每一门都去学精通，但根据兴趣和我认为重要的知识我较深入的学了C++和计算机图形学（OPenGL），我认为这是我程序员生涯的基础。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2013-06~
+                </div>
+            </li>
+            <li class="education_event">
+                <div class="event_icn icon-graduation-cap"></div>
+                <div class="event_content">
+                    <h2>对软工前三年的web前端学习反思</h2>
+                    <p>
+                        在大学前三年里，我也不能说我在Web前端有所建树，但在接下来的这个暑假到现在，即在用友实习的这段时间里，我开始对web前端知识进行定向的学习，前面说过对于我感兴趣和发展方向的知识，我会尽量去仔细学习其中的每一个点，最后再把知识点合起来，这样才能达到随心所欲的效果。这一次主要的学习点是CSS和Javascript面向对象编程和设计模式，至于HTML5之前看过一些相关方面的书籍且整理了相关资料。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2013-06~
+                </div>
+            </li>
+            <li class="project_event">
+                <div class="event_icn icon-briefcase"></div>
+                <div class="event_content">
+                    <h2>Web版限时竞拍系统</h2>
+                    <p>
+                        从个人软件过程和小组软件过程课程项目（Web版限时竞拍系统）中，我体会到了作为一个项目的带头人，其需要了解的知识应该是方方面面的，但具体的可以分给某一个队员去深入。这里的方方面面不只是专业知识的收获（这个项目里我加强了对jQuery的熟练程度），更多的是团队之间的协调，7个人，怎样才能发挥一个团队的作用，并且让大家共同进步。这也是今天我找工作的正真意义，我找的不是一份好的工作，而是一个好的Web前端团队，能一起共同成长的团队。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2012-09~2013-01
+                </div>
+            </li>
+            
+            <li class="project_event">
+                <div class="event_icn icon-briefcase"></div>
+                <div class="event_content">
+                    <h2>基于Web的商机管理</h2>
+                    <p>
+                        这是一个产学研项目，答辩顺利结题领取奖励。当然，我们的目标不只是为了这份奖励，而是这个有老师带领的较正式的项目开发经验。没有异议我是系统界面设计及编码的。我的收获：对html/javascript/css及jQuery、jQueryUI的实践开发能力有了较大的提升；更加懂得了团队合作中的分工合作。还有一些额外的收获，这和我的学习方式有关，前端避免不了要与服务端联系，完全的分离，目前我们还做不到，因此我有意的去学习了Asp.net webform C#服务端开发。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2012-09~2013-05
+                </div>
+            </li>
+            <li class="project_event">
+                <div class="event_icn icon-briefcase"></div>
+                <div class="event_content">
+                    <h2>校讯通</h2>
+                    <p>
+                        这算是对软工大学生涯的一个结束(当然还有14年6月的答辩)，因此我们都很认真的对待，同样是团队项目，不过人少了，时间也少了，也就意味着开发强度增大了。但这些不是问题，因为每当干起我们感兴趣的事的时候，我们常常忘记疲惫和时间。三十天的时间被我们安排满后，从需求设计，概要，详细设计到开发测试和答辩。我们没有松懈过，因为这次是一个挑战，我们面临的是过去很少接触，Oracle和Asp.net MVC模式的框架，因为在Asp.net 4以后微软没有提供更多对Oracle的支持，而是Oracle自己提供对Asp.net的支持，同时（项目开发时）版本也只到支持4.0,而我们提交的计划中使用的是Asp.net 4.5。Web前端页面的编码是在设计完成之后就开始的，整体下来花了13天左右，可现在服务端是种种问题需要突破，在查找相关资料和配置环境及知识学习上花掉大量时间，各个击破。可现在离项目答辩还剩最后7天，但一起解决问题后的喜悦促使我们在7天之内忘记日夜的很好的完成了计划的需求，并在最后一天的答辩和展示中获得专业数一数二的优秀成绩。
+                    </p>
+                </div>
+                <div class="event_date">
+                    2013-05~2013-06
+                </div>
+            </li>
+            <li class="user_event">
+                <div class="event_icn icon-user"></div>
+                <div class="event_content">
+                    <h2>最近的反思</h2>
+                    <p>前面介绍项目的时候很少聊到我是怎样进行Web前端开发的过程，因为在现在看来，那些经历可以不值一提。因为之前没有每一个或大部分的以点的知识去学习CSS和Js，所以我以前的Web前端开发还停留在一种尝试的级别，也就是说很多效果是在查询手册并试验的多次或从看别人的代码中获取的情况下才达到的，这就是我认为的在较高一个层面（低一级）的去学习，是不能达到随心所欲的效果的。比如，如果不以一点的知识去学习一门技术，如：CSS,表面上很简单，可用于设置文档样式的常用属性只有45个，但是，因为CSS的多态性，属性及属性值的不同组合会产生无数不同的效果。显然去记住每一个规则的无数特殊值和对数级的组合是不现实的，因此我们还得从点的角度去了解CSS的工作原理。至于CSS有哪些知识点我就不在在班门弄斧了，我毕竟还只是一个学习者。</p>
+                </div>
+                <div class="event_date">
+                </div>
+            </li>
+            <li class="user_event">
+                <div class="event_icn icon-user"></div>
+                <div class="event_content">
+                    <h2>CSS与HTML点知识的例子</h2>
+                    <p>如果不能清晰的理解并分清HTML的（结构块元素、终止块元素、多功能块元素、行内元素等），就连我常用的CSS手册的作者在其个人博客中讲到CSS:margin属性取auto自动值时的剧中效果时都只是简单的定向介绍了自己的水平居中对其的效果，而在没有指明HTML元素类型的情况下得出margin属性的auto取值无法使元素垂直剧中对其的结论。其实margin:在垂直方向集top和bottom值都为auto即margin:auto 0;的情况下是可以是绝对定位的元素相对于起最近定位祖先元素垂直居中对其的，只需要给这个元素在垂直方向实现拉伸的效果（而非真实的拉伸，固定宽高的不被拉伸。就像两根完全相同的橡皮筋用同样的力各向top和bottom方向拉绝对定位元素，而期间补差就是margin的auto值）即top:0;bottom:0;margin:auto 0; 而对于其他类型的HTML元素的垂直对其还有line-height; vertical-align;等组合height或补白的使用。</p>
+                </div>
+                <div class="event_date">
+                </div>
+            </li>
+            <li class="user_event">
+                <div class="event_icn icon-user"></div>
+                <div class="event_content">
+                    <h2>一个Js点知识的例子</h2>
+                    <p>如jQuery，如果我们只用帮助文档学习jQuery的API，随意的就动用jQuery甚至ExtJS，那么我们的程序不管是性能或是流量都会受到损失。比如在jQuery选择其中，每次选择需要花掉许多额外的检查，因为jQuery要适用大多主流浏览器，还要加固安全，因此额外的开销是不可避免的。但如果知道这些实现方法，我们可以针对其进行代码的优化来避其弊端。当然选择器这个例子局的不是很好，因为document。getElement…()的方法也是耗时的应尽量获取一次多处使用。最近调过一点jQuery源码，但还在进行中，因为遇到一些还不到大明白的语句，因此去查看了相关书籍，javascript面向对象编程指南，javascript设计模式等，收获很多，虽然之前有一点ActionScript和C++和C#基础再加上之前看过js高级编程教程部分章节，并做过许多开发，但对js的了解还不够深入，现在也还没达到深入的地步，一直在学习。最近在看javascript权威指南又补充了好多漏洞。</p>
+                </div>
+                <div class="event_date">
+                </div>
+            </li>
+            <li class="user_event">
+                <div class="event_icn icon-user"></div>
+                <div class="event_content">
+                    <h2>安排，一切都是最好的安排</h2>
+                    <p>我接下来的安排是一步步深入，正真的把Web前端以点的方式去掌握每一个知识点，同时跟一个好的团队共同进步，并最终把我的所有点汇集成一本书，帮助更多的人。</p>
+                </div>
+                <div class="event_date">
+                </div>
+            </li>
+            <li class="user_event">
+                <div class="event_icn icon-user"></div>
+                <div class="event_content">
+                    <h2>联系</h2>
+                    <ul>
+                        <li>手机: 13237135262</li>
+                        <li>E-mail: <a href="mailto:lianle.k@163.com" target="_blank">lianle.k@163.com</a></li>
+                        <li>部分链接:<a href="http://codepen.io/xiaole" target="_blank">CodePen</a></li>
+                        <li>过去有一个网站，一年前关掉了，三个月后将重新开启，除了网盘，在网上留下的东西并不多</li>
+                    </ul>
+                </div>
+                <div class="event_date">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/bygone.js"></script>
+
+
+</body></html>
