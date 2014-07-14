@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - A Pen by xiaole</title>
+    <link rel="stylesheet" href="src/index.css" media="screen" type="text/css" />
+</head>
+<body>
+    <div id="doc">
+        <header id="hd">
+            <span id="game-name">2048</span>
+            <div id="score" class="score">score:0</div>
+        </header>
+        <!------------game操作区------------>
+        <div id="bd">
+            <div id="scene" class="scene">
+            </div>
+            <div class="control-panel">
+                <div class="dotstyle dotstyle-fillup">
+                    <h2>级别</h2>
+                    <ul>
+                        <li><a>低</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li class="current"><a>普</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a>高</a></li>
+                    </ul>
+                </div>
+                <input type="checkbox" id="anima-switch" name="anima-switch" /><label for="anima-switch"> 动画开关</label>
+            </div>
+        </div>
+        <footer id="ft">
+            <span>game2048:v0.0.2 oop code by xiaole</span>
+        </footer>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+</html>
