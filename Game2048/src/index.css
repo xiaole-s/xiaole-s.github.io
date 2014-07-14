@@ -1,0 +1,265 @@
+/**********************总体元素统一********************/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5 tahoma,arial,sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:"courier new",courier,monospace, Arial, sans-serif;}
+small { font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; color:#0069ca; }
+a:hover { text-decoration:none; color:#f60; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+
+/*********************temp*********************
+doc, footer, header, bd{
+  border:solid #999 1px;
+}/*/
+/**********滚动条默认显示样式**********/
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.3);
+    outline-offset: -2px;
+    outline: 2px solid rgba(255,255,255,0.01);
+    border-radius: 4px;
+    /*border: 2px solid rgba(255,255,255,0.2);*/
+}
+/***********active滚动条显示样式**************/ 
+::-webkit-scrollbar-thumb:active{
+    background-color:rgba(0,0,0,0.2);   
+    border-radius:4px;   
+}  
+/**********鼠标点击滚动条显示样式**********/  
+::-webkit-scrollbar-thumb:hover{   
+    background-color:#333;
+    border-radius:4px;   
+}   
+/**********滚动条大小**********/  
+::-webkit-scrollbar{   
+    width:6px;
+    height:6px;
+}   
+/**********滚动框背景样式**********/  
+::-webkit-scrollbar-track-piece{   
+    background-color:rgba(255,255,255,0.2);   
+    border-radius:2px;   
+}
+/*********************框架布局*********************/
+body{
+    -webkit-user-select:none;
+    background-color:#cfcfc1;
+    font-family:"Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+#doc{
+    width:520px;
+    margin:0 auto;
+}
+#hd{
+    position:relative;
+    top:0;
+}
+#bd{
+    position:relative;
+}
+#ft{
+    font-size: 20px;
+    font-weight:bolder;
+    margin:12px auto;
+    color:#999;
+}
+/*********************body*********************/
+#hd span{
+    font-size:100px;
+    font-weight:bold;
+    color:#555;
+}
+/*********************game操作区*********************/
+.score{
+    position:absolute;
+    top:80px;
+    right:36px;
+    padding:10px;
+    border-radius:6px;
+    background-color:#666;
+    font-size:28px;
+    font-weight:bold;
+    line-height:100%;
+    color:#eee;
+}
+.scene{
+    margin:0 auto;
+    width:518px;
+    height:518px;
+    border:1px solid rgba(33,33,33,0.3);
+    border-radius:5px;
+    background-color:rgba(33,33,33,0.3);
+    cursor:pointer;
+}
+.scene .block-list-bg{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    overflow:hidden;
+    margin:auto;
+    font-size:0;
+    border: solid 1px rgba(0,0,0,0);
+}
+.scene .block-list-bg li{
+    list-style: none outside none;
+    display:inline-block;
+    *display:inline;
+    position:relative;
+    /*overflow:hidden;*/
+    width:125px;
+    height:125px;
+    margin-left:4px;
+    border-radius:5px;
+    background-color:rgba(255,255,255,0.5);
+    font-size:50px;
+    line-height:180%;
+    text-align:center;
+    color:rgba(255,255,255,0.8);
+}
+.scene .block{
+    position:absolute;
+    z-index:10;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    border-radius:5px;
+    /*opacity: 0.1;*/
+    -webkit-transition:all .5s ease-in 0;
+       -moz-transition:all .5s ease-in 0;
+         -o-transition:all .5s ease-in 0;
+            transition:all .5s ease-in 0;
+}
+.scene .div-show{
+    opacity: 1;
+}
+
+.scene .full-scene{
+    position: relative;
+    z-index: 12;
+    width:100%;
+    height:100%;
+    font-size: 60px;
+    font-style:italic;
+    text-align:center;
+    line-height:800%;
+    opacity: 0.01;
+    -webkit-transition:all .8s ease-in .5s;
+       -moz-transition:all .8s ease-in .5s;
+         -o-transition:all .8s ease-in .5s;
+            transition:all .8s ease-in .5s;
+}
+.full-scene.win{
+    color:#e9ec3c;
+    background-color:rgba(255,255,255,0.8);
+    opacity: 1;
+}
+.full-scene.gameover{
+    color:#d9dccc;
+    background-color:rgba(33,33,33,0.5);
+    opacity: 1;
+}
+
+/*******************控制面板************************/
+.control-panel{
+    position:absolute;
+    top:0px;
+    right:-200px;
+    width:170px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(33,33,33,0.4);
+    font:0;
+}
+.control-panel label{
+    position:relative;
+    top:-3px;
+    font:9pt;
+    color:#ddd;
+}
+.control-panel input{
+    background-color: #fff;
+    border: solid #666 1px;
+}
+
+/**********难度级别************/
+.dotstyle ul {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+}
+ 
+.dotstyle li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 10px 0 26px 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+ 
+.dotstyle li a {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 50%;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.3);
+    text-indent: 6px;
+    line-height: 180%;
+    cursor: pointer; /* make the text accessible to screen readers */
+    position: absolute;
+    color:#eee;
+}
+/* Fill up */
+.dotstyle-fillup li a {
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,1);
+    -moz-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.dotstyle-fillup li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 1px #fff;
+    -moz-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s;
+}
+
+.dotstyle-fillup li a:hover,
+.dotstyle-fillup li a:focus {
+    background-color: rgba(255,255,255,0.5);
+}
+ 
+.dotstyle-fillup li.current a::after {
+    height: 100%;
+    /*border-radius: 50%;*/
+}
+/*******************Top磅************************/
