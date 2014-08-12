@@ -311,7 +311,7 @@ xls.Game2048 = (function () {
                 //setTimeout中this是window
                 setTimeout(function () {
                     self.printNumb();
-                }, 500);
+                }, 200);
                 return true;
             }
             //alert("error!");
@@ -427,7 +427,7 @@ xls.Game2048 = (function () {
     }
 
     /************************事件响应************************/
-    window.onkeypress = function (e) {
+    window.onkeyup = function (e) {
         switch (e.keyCode) {//左上右下
             case 37:
             case 97:
