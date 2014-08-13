@@ -1,0 +1,272 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+.qn_blue {
+color: #25a4bb;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:active {
+    color: #000;
+}
+
+.clear {
+    clear: both;
+}
+
+html {
+    font-family: arial;
+}
+
+body {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    background: #f3f3f3;
+}
+
+.qn_font12 {
+    font-size: 12px;
+}
+
+.qn_lh {
+    line-height: 1.5;
+}
+
+.qn_header {
+    height: 42px;
+    background-color: #25a4bb;
+    border-bottom: 1px solid #1b7a8b;
+    position: relative;
+}
+
+.qn_header .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    background: url(http://simg1.qunarzz.com/site/images/wap/touch/images/v2/images2x/header_sprites_4.png) 0 0 no-repeat;
+    background-size: 255px 42px;
+}
+
+.qn_header .back a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.qn_header .title {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    line-height: 42px;
+}
+
+.qn_calendar {
+    padding: 15px 10px 15px 10px;
+    background: #f3f3f3;
+}
+
+.qn_calendar table {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.qn_calendar thead td {
+    height: 39px;
+    font-family: arial;
+    background-color: #fff;
+}
+
+.qn_calendar thead h5 {
+    font-size: 18px;
+    line-height: 39px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #cdcdcd;
+}
+
+.qn_calendar .weeks {
+    font-size: 14px;
+    height: 23px;
+    color: #8c8c8c;
+    background-color: #f3f3f3;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #cacaca;
+}
+
+.qn_calendar .weeks th {
+    text-align: center;
+}
+
+.qn_calendar .days {
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.qn_calendar .days td {
+    background: #fff;
+    color: #000;
+    border: 2.5px solid #e3e3e3;
+    text-align: center;
+}
+
+.qn_calendar tbody {
+    padding: 3px 0 0 3px;
+    background: #e3e3e3;
+    border: 1px solid #cbcbcb;
+    border-top: 0;
+}
+
+.qn_calendar tbody td {
+    margin: 0 2px 2px 0;
+    background: #e3e3e3;
+    height: 40px;
+    width: 40px;
+}
+
+.qn_calendar tbody td.disable {
+    color: #a7a7a7;
+    background: #f3f3f3;
+    cursor: default;
+}
+
+.qn_calendar tbody td.active, .qn_calendar tbody td.hover {
+    background-color: #25a4bb;
+    color: #fff;
+}
+
+.qn_calendar th.weekend, .qn_calendar td.weekend {
+    color: #ff9036;
+}
+
+.qn_calendar td.holiday {
+    color: #ff9036;
+    font-size: 12px;
+}
+
+.qn_calendar td.holiday p {
+    font-size: 12px;
+}
+
+.qn_calendar td.weekday {
+    color: #000;
+}
+
+.qn_calendar tbody td.null {
+    background-color: #e3e3e3;
+    opacity:.2;
+}
+
+.qn_page.active {
+    z-index: 100;
+}
+
+.qn_page.active .qn_index_list .bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.qn_page {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    display: block;/*-------------------*/
+    min-height: 480px;
+}
+
+.calendar {
+    background: #fff;
+    margin-left: 5px;
+    padding: 2px 14px 0 8px;
+    line-height: 14px;
+}
+
+.calendar-head {
+    display: -webkit-box;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    line-height: 1.5;
+    background: #fff;
+}
+
+.calendar-vbar {
+    border-left: 1px solid #ddd;
+    margin: 4px 0;
+}
+
+.calendar-tab {
+    -webkit-box-flex: 1;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-tab.active {
+    border-bottom: 3px solid #25a4bb;
+}
+
+.qn_calendar h5 {
+    background: #fff;
+}
+
+.qn_calendar .days td.hasChecked {
+    background: url(http://simg1.qunarzz.com/site/images/wap/touch/images/v2/images2x/td_box.png) center center no-repeat #fff;
+    background-size: 41px 40px;
+}
+
+.qn_calendar .days td:first-child.hasChecked {
+    background-size: 40px 40px;
+}
+
+.calendarTip {
+    width: 90%;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ff9036;
+    display: none;
+    color: #fff;
+    position: absolute;
+    top: 280px;
+    left: 5%;
+}
+
+.qn_calendar {
+    padding: 0 10px;
+}
