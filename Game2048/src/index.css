@@ -48,48 +48,62 @@ doc, footer, header, bd{
     border-radius:2px;   
 }
 /*********************框架布局*********************/
-body{
-    -webkit-user-select:none;
-    background-color:#cfcfc1;
-    font-family:"Clear Sans", "Helvetica Neue", Arial, sans-serif;
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #cfcfc1;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 }
 #doc{
-    width:520px;
-    margin:0 auto;
+    width:100%;
+    margin: auto;
+    overflow:hidden;
 }
 #hd{
     position:relative;
     top:0;
+    height:30vh;
+    overflow:hidden;
 }
 #bd{
     position:relative;
 }
 #ft{
-    font-size: 20px;
+    font-size: 5vw;
     font-weight:bolder;
-    margin:12px auto;
+    background-color:#edebe7;
+    padding:12px;
     color:#999;
 }
 /*********************body*********************/
+#hd, .control-panel {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 #hd span{
-    font-size:100px;
+    font-size:16vh;
     font-weight:bold;
     color:#555;
 }
-/*********************game操作区*********************/
 .score{
+    display:inline-block;
     position:absolute;
-    top:80px;
-    right:36px;
-    padding:10px;
+    right:0;
+    bottom:0;
+    padding:0 5px;
     border-radius:6px;
     background-color:#666;
-    font-size:28px;
+    font-size:6vh;
     font-weight:bold;
-    line-height:100%;
     color:#eee;
 }
+/*********************game操作区*********************/
+
 .scene{
+    position:relative;
     margin:0 auto;
     width:518px;
     height:518px;
@@ -97,6 +111,7 @@ body{
     border-radius:5px;
     background-color:rgba(33,33,33,0.3);
     cursor:pointer;
+    overflow:hidden;
 }
 .scene .block-list-bg{
     position:absolute;
@@ -121,7 +136,7 @@ body{
     border-radius:5px;
     background-color:rgba(255,255,255,0.5);
     font-size:50px;
-    line-height:180%;
+    line-height:200%;
     text-align:center;
     color:rgba(255,255,255,0.8);
 }
@@ -148,15 +163,16 @@ body{
     z-index: 12;
     width:100%;
     height:100%;
-    font-size: 60px;
-    font-style:italic;
     text-align:center;
-    line-height:800%;
     opacity: 0.01;
     -webkit-transition:all .8s ease-in .5s;
        -moz-transition:all .8s ease-in .5s;
          -o-transition:all .8s ease-in .5s;
             transition:all .8s ease-in .5s;
+}
+.scene .full-scene span {
+    font-size: 2rem;
+    font-style:italic;
 }
 .full-scene.win{
     color:#e9ec3c;
@@ -170,16 +186,39 @@ body{
 }
 
 /*******************控制面板************************/
-.control-panel{
-    position:absolute;
-    top:0px;
-    right:-200px;
-    width:170px;
-    height: 300px;
-    padding: 10px;
+.control-panel {
+    position: absolute;
+    bottom: 0;
+    left: -91%;
+    width: 100%;
+    height: 12vh;
     border-radius: 5px;
     background-color: rgba(33,33,33,0.4);
-    font:0;
+    font: 0;
+    -moz-transition: all .6s ease-in-out 0;
+    -o-transition: all .6s ease-in-out 0;
+    -webkit-transition: all .6s ease-in-out 0;
+    transition: all .6s ease-in-out 0;
+}
+.on-off {
+    content:"控制面板";
+    display:block;
+    position:absolute;
+    top:0;
+    right:1vh;
+    width:2vh;
+    font-size:2vh;
+    line-height:3vh;
+    height:100%;
+    color:#fff;
+    text-align:center;
+    border-left:solid #77f1bd 1.5vh;
+}
+.control-panel .check-box {
+    display:inline-block;
+    position:absolute;
+    bottom:0;
+    padding-bottom:2vh;
 }
 .control-panel label{
     position:relative;
@@ -196,7 +235,8 @@ body{
 .dotstyle ul {
     position: relative;
     display: inline-block;
-    margin: 0;
+    float:left;
+    margin: 0 10px;
     padding: 0;
     list-style: none;
     cursor: default;
@@ -206,7 +246,7 @@ body{
     position: relative;
     display: block;
     float: left;
-    margin: 10px 0 26px 0;
+    margin: 10px 0;
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -263,3 +303,11 @@ body{
     /*border-radius: 50%;*/
 }
 /*******************Top磅************************/
+
+
+
+
+
+
+
+
