@@ -16,7 +16,7 @@ xls.Game2048 = (function () {
         colors = null,  //滑块颜色取值数组
         blockWH = 0,    //滑块高宽
         blockGap = 0,   //滑块间隔
-        blockList = [],//滑块列表
+        blockList = [], //滑块列表
         sceneWH,
         self = null,    //把Game2048的对象的this带出来
 
@@ -73,7 +73,7 @@ xls.Game2048 = (function () {
             return a;
         },
         //矩阵镜像 需要预先排除空域
-        //|2 4 8 4|    |4 8 8 2|
+        //|2 4 8 4|    |4 8 4 2|
         //|2 4 0 0|    |4 2 0 0|
         //|2 4 8 0| -> |8 4 2 0|
         //|2 8 0 0|    |8 2 0 0|
@@ -110,7 +110,7 @@ xls.Game2048 = (function () {
         //scene.innerHTML = "";//场景清空
         ele && scene.removeChild(ele);
     }
-    function Game2048(name, n, nb, sc, clrs, wh) {
+    function Game2048(name, n, nb, sc, clrs, wh, callback) {
         //只用初始化一次的
         self = this;
         n_n = n || n_n;
@@ -120,7 +120,7 @@ xls.Game2048 = (function () {
         this.colors = clrs || [];
         sceneWH = wh > 500 ? 500 : wh || 450;
         scene.style.width = scene.style.height = sceneWH + "px";
-
+        this.callback = callback || function () { };
         levelManager();
         this.init();
     };
@@ -162,7 +162,7 @@ xls.Game2048 = (function () {
                 var li = document.createElement("li");
                 li.style.height = li.style.width = blockWH + "px";
                 li.style.marginTop = li.style.marginLeft = blockGap + "px";
-                li.style.fontSize = (50 * 4 / n_n) + "px";
+                li.style.fontSize = (blockWH / 2) + "px";
                 blockList.push(li);
                 ul.appendChild(li);
             }
@@ -184,9 +184,6 @@ xls.Game2048 = (function () {
             n_n = a[1];
             nB = a[2];
             this.init();
-        },
-        Rule: function () {
-
         },
         makeBlockArray: function () {
             var t = [];
@@ -214,7 +211,7 @@ xls.Game2048 = (function () {
                 init: function () { this.panel.innerHTML = ""; this.panel.className = "full-scene"; },
                 getPanel: function () { return this.panel; },
                 removePanel: function () { this.panel.parentNode.removeChild(this.panel);},
-                setMsg: function (str) { this.panel.innerHTML = str; },
+                setMsg: function (str) { this.panel.innerHTML = '<span style="height:' + sceneWH + 'px; line-height:' + sceneWH + 'px;">' + str + '</span>'; },//需要优化
                 getMsg: function () { return this.panel.innerHTML.toString(); },
                 addClass: function (str) { this.panel.className = "full-scene " + str; }//@+检查class str是否存在
             };
@@ -230,11 +227,14 @@ xls.Game2048 = (function () {
             this.getFullPanel().init();
             this.getFullPanel().setMsg("Game Over!!");
             this.getFullPanel().addClass("gameover");
+
+            setTimeout(function () { self.callback(); }, 0);
         },
         win: function () {
             this.getFullPanel().init();
             this.getFullPanel().setMsg("You Win!!");
             this.getFullPanel().addClass("win");
+            setTimeout(function () { self.callback(); }, 0);
             setTimeout(function () {
                 if (confirm("恭喜进入下一关!!")) {
                     //alert(lvlis[++level]);
@@ -339,20 +339,20 @@ xls.Game2048 = (function () {
         newBlock: function () {
             this.excludeByRule(slideBlockArray);
             var len = emptyBlockArray.length;
-
+            
             for (var i = 0; i < len && i < nB; i++) {
                 var m = emptyBlockArray[Math.floor(Math.random() * len - .01)],
                     x = Math.floor(m / n_n),
                     y = m % n_n;
                 //产生新块数据
-                slideBlockArray[x][y] = new SlideBlock([x, y], Math.random() > 0.9 ? 4 : 2, null)
+                slideBlockArray[x][y] = new SlideBlock([x, y], Math.random() > 0.9 ? 4 : 2, null);
             }
             //检测slideBlockArray是否已满且不可合并
             (2 > len) && !this.checkUDLR(slideBlockArray) && this.gameover();
 
             //this.updateScene();
         },
-        merge: function () {
+        merge: function () {//合并
             //清除空快
             slideBlockArray = this.excludeByRule(slideBlockArray);
 
@@ -403,7 +403,6 @@ xls.Game2048 = (function () {
             slideBlockArray = Matrix.transposition(slideBlockArray);
             this.merge();
             slideBlockArray = Matrix.transposition(slideBlockArray);
-            //this.newBlock();
             this.updateScene();
         },
         //右合并 
@@ -411,7 +410,6 @@ xls.Game2048 = (function () {
             slideBlockArray = Matrix.mirror(slideBlockArray);
             this.merge();
             slideBlockArray = Matrix.mirror(slideBlockArray);
-            //this.newBlock();
             this.updateScene();
         },
         //下合并
@@ -421,12 +419,12 @@ xls.Game2048 = (function () {
             this.merge();
             slideBlockArray = Matrix.mirror(slideBlockArray);
             slideBlockArray = Matrix.transposition(slideBlockArray);
-            //this.newBlock();
             this.updateScene();
         }
     }
 
     /************************事件响应************************/
+
     window.onkeyup = function (e) {
         switch (e.keyCode) {//左上右下
             case 37:
@@ -477,8 +475,73 @@ xls.Game2048 = (function () {
             new liNav(nav);
         })
     }
-    
+    //节流
+    function throttle2(fn, delay, operatDelay) {
+        var timer,
+            start;
+        delay = operatDelay < delay ? delay : operatDelay;//必须让动画播放完
+        //alert("start1: "+start);
+        return function () {
+            //alert("operatDelay: " + operatDelay);
+            //alert("start2: " + start);
+            var self = this, cur = new Date();
+            clearTimeout(timer);
+            start || (start = cur);
+            //alert("start3: " + start);
+            //超时后直接执行，使动画连贯
+            if (operatDelay <= cur - start) {
+                fn.apply(self, arguments);
+                start = cur;
+            }
+            else {
+                timer = setTimeout(function () {
+                    fn.apply(self, arguments)
+                }, delay);
+            }
+        }
+    }
+    var oldPos = [];
+    function startTouchHandler(e){
+        oldPos = [e.clientX || e.targetTouches[0].pageX, e.clientY || e.targetTouches[0].pageY];
+    }
+    function endTouchHandler(e){
+        var nowPos = [e.clientX || e.changedTouches[0].pageX, e.clientY || e.changedTouches[0].pageY],
+            offsetX = nowPos[0] - oldPos[0],
+            offsetY = nowPos[1] - oldPos[1],
+            absX = Math.abs(offsetX),
+            absY = Math.abs(offsetY);
+        //alert(oldPos + "\n" + nowPos);
+        
+        if (absX > absY) {
+            if (absX < 50) return;
+            if (offsetX < 0) {
+                nD = "l";
+                self.leftMerge();
+            } else {
+                nD = "r";
+                self.rightMerge();
+            }
+        } else {
+            if (absY < 50) return;
+            if (offsetY < 0) {
+                nD = "u";
+                self.upMerge();
+            } else {
+                nD = "d";
+                self.downMerge();
+            }
+        }
+    }
+    sceneEle.addEventListener("mouseenter", startTouchHandler, false);
+    sceneEle.addEventListener("touchstart", startTouchHandler, false);
+    sceneEle.addEventListener("touchend", endTouchHandler, false);
+    sceneEle.addEventListener("mouseleave", endTouchHandler, false);
+    //function slideControl() {
 
+    //}
+    //var throttleSlideControl = throttle2(slideControl, 200, 200);
+    //window.addEventListener('mousemove', throttleSlideControl, false);
+    
     return Game2048;
 })();
 
@@ -488,7 +551,24 @@ xls.Game2048 = (function () {
                  "rgba(238,208,75,1)", "rgba(238,216,98,1)", "rgba(238,170,15,1)",
                  "rgba(238,140,15,1)", "rgba(238,124,95,1)", "rgba(236,141,84,1)",
                  "rgba(238,177,121,1)", "rgba(220,205,173,1)", "rgba(230,225,203,1)"];
-    var game = new xls.Game2048(2048, 4, 2, 100, clrs, 450);
-
-    
+    var wd = document.body.clientWidth,
+        h = screen.availHeight,
+        onOff = false,
+        cp = document.body.getElementsByClassName("control-panel")[0];
+    doc.style.height = doc + "px";
+    var game = new xls.Game2048(2048, 4, 2, 100, clrs, wd, function () { cp.style.left = 0 + "px"; onOff = true; });
+     //onOff = document.body.getElementsByClassName("control-panel")[0],
+    cp.addEventListener("click", function () {
+        if (!onOff) { cp.style.left = 0 + "px"; onOff = true; }
+        else { cp.style.left = "-90%"; onOff = false; };
+    }, false);
 })();
+
+
+
+
+
+
+
+
+
