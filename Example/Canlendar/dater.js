@@ -271,13 +271,13 @@
                     var data = ma[i].data;
                     if (data.year <= cy && data.month <= cm) {
                         if (data.month == cm) {
-                            for (var j = ma[i].getPreDayCount(), len = cd + j - 1; j < len; j++) {
+                            for (var j = ma[i].getPreDayCount(this.weekStart), len = cd + j - 1; j < len; j++) {
                                 ma[i].monthDays[j][0] = flag[0];
                             }
                             //ma[i].monthDays[len][0] = flag[1];
                             ma[i].monthDays[len][2] = '今天'//flag[1][1];
                         } else {
-                            for (var j = ma[i].getPreDayCount(), len = j + data.lastDay; j < len; j++) {
+                            for (var j = ma[i].getPreDayCount(this.weekStart), len = j + data.lastDay; j < len; j++) {
                                 ma[i].monthDays[j][0] = flag[0];
                             }
                         }
