@@ -8,7 +8,8 @@
     <h2>cross-origin demo</h2>
     <div><span id="output"></span></div>
     <script>
-    var gA = {
+     document.domain = "github.io";
+     var gA = {
         a: 1,
         b: [2,3,4]
     }
